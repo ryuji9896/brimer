@@ -1,0 +1,177 @@
+$base-font-family: -apple-system, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
+$base-font-size:   14px;
+$base-font-weight: 400;
+$base-line-height: 1.2;
+$spacing:20px;
+$text-color:#111;
+$background-color: #fdfdfd;
+$green:#00A19A;
+$grey:#b5b5b6;
+$blue:#0072D3;
+$yellow:#E1B73A;
+$red:#E60012;
+$titlebg:#555;
+$btnbg:#8C7676;
+// Width of the content area
+$pc-width: 1024px;
+$ipad-width: 768px;
+$side-width: 568px;
+
+.text_green{
+  color: $green;
+  a{
+    color: $green;
+  }
+}
+
+.text_blue{
+  color: $blue;
+  a{
+    color: $blue;
+  }
+}
+
+.text_red{
+  color:$red ;
+  a{
+    color: $red;
+  }
+}
+
+
+
+@mixin media-query($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
+
+
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, address, img, dl, dt, dd, ol, ul, li, form, label,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, footer, header, menu, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+ul ul{
+  margin: 0;
+}
+
+table {
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, nav, section {
+  display: block;
+}
+
+a{
+  text-decoration: none;
+}
+
+body {
+  font-family: $base-font-family;
+  line-height: $base-line-height;
+  font-size: $base-font-size;
+  color: #555;
+  letter-spacing: 1px;
+  @include media-query($ipad-width) {
+    font-size: 14px;
+    line-height: 2;
+  }
+  @include media-query($pc-width) {
+    font-size: 14px;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover{
+  color: $red;
+}
+
+a:hover>img{
+  opacity: 0.7;
+}
+
+img{
+  width: 100%;
+}
+
+video{
+  width: 100%;
+}
+
+
+h1{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  @include media-query($ipad-width){
+    font-size: 40px;
+  }
+}
+
+h2{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  @include media-query($ipad-width) {
+    font-size: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+h3{
+  font-size: 13px;
+  font-weight: bold;
+  @include media-query($ipad-width) {
+    font-size: 20px;
+  }
+}
+
+p{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.d-flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clear{
+  clear: both;
+}
+
+.mobile-none{
+  display: none;
+  @include media-query($ipad-width){
+    display: block;
+  }
+}

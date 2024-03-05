@@ -3,12 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
         <meta name="csrf_token" content="{{ csrf_token() }}">
-        
-        <title>Brimer</title>
+        <title>@yield('title')</title>
+        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/style.css') }}" rel="stylesheet">
     </head>
     <body>
-        <h1>@yield('title')</h1>
+        <header>
+            @include('parts/nav')
+        </header>
+        @yield('content')
     </body>
 </html>
