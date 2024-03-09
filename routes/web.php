@@ -20,12 +20,16 @@ Route::get('/map/site', [FrontController::class, 'site_select'])->name('site');
 
 
 use App\Http\Controllers\MypageController;
-Route::get('/mypage', [MypageController::class, 'mypage'])->name('mypage');
+Route::get('/mypage', [MypageController::class, 'mypage'])->name('mypage')->middleware('auth');
 
 use App\Http\Controllers\LineupController;
-Route::get('/lineup_create', [LineupController::class, 'create'])->name('create');
-Route::get('/lineup_edit', [LineupController::class, 'edit'])->name('edit');
+Route::get('/lineup_create', [LineupController::class, 'create'])->name('create')->middleware('auth');
+Route::get('/lineup_edit', [LineupController::class, 'edit'])->name('edit')->middleware('auth');
 Route::get('/lineup', [LineupController::class, 'lineup'])->name('lineup');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -21,7 +21,7 @@
     </ul>
     <ul>
         <li><p>STANDING POSITION</p></li>
-        <li><input type="file" class="form-controle-file" name="standing_position_image"></li>
+        <li><input type="file" class="form-controle-file" name="standing_position_image" placeholder="立ち位置の画像を選択"></li>
         <li><input type="text" class="form-control" name="standing_position" rows="50" value="{{old('standing_position')}}" placeholder="立ち位置の説明文を入力(50文字以内)"></li>
     </ul>
     <ul>

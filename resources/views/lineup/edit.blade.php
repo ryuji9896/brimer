@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','記事の編集')
+@section('title','定点の編集')
 @section('content')
     <h1>定点編集画面</h1>
     <img src="{{ secure_asset('image/map_split_impact_no.png')}}">
