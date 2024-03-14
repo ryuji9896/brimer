@@ -1,3 +1,25 @@
+@charset "UTF-8";
+.text_green {
+  color: #00A19A;
+}
+.text_green a {
+  color: #00A19A;
+}
+
+.text_blue {
+  color: #0072D3;
+}
+.text_blue a {
+  color: #0072D3;
+}
+
+.text_red {
+  color: #E60012;
+}
+.text_red a {
+  color: #E60012;
+}
+
 html, body, div, span, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, address, img, dl, dt, dd, ol, ul, li, form, label,
@@ -33,4 +55,107 @@ footer, header, nav, section {
 
 a {
   text-decoration: none;
+}
+
+body {
+  font-family: -apple-system, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "游ゴシック Medium", "メイリオ", meiryo, sans-serif;
+  line-height: 1.2;
+  font-size: 14px;
+  color: #555;
+  letter-spacing: 1px;
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 14px;
+    line-height: 2;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  color: #E60012;
+}
+
+a:hover > img {
+  opacity: 0.7;
+}
+
+img {
+  width: 100%;
+}
+
+video {
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+h3 {
+  font-size: 13px;
+  font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clear {
+  clear: both;
+}
+
+.mobile-none {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .mobile-none {
+    display: block;
+  }
 }
