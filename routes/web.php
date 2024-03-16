@@ -28,7 +28,6 @@ Route::get('/lineup_edit', [LineupController::class, 'edit'])->name('edit')->mid
 Route::get('/lineup', [LineupController::class, 'lineup'])->name('lineup');
 Auth::routes();
 
+Auth::routes();
 
-use App\Http\Controllers\Auth\LoginController;
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

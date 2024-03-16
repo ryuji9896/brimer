@@ -26,8 +26,7 @@
                 
             </li>
         </ul>
-            
-    </form>
+        
         <ul><li><input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
         
                 <label class="form-check-label" for="remember">
@@ -38,12 +37,6 @@
             <li><button type="submit" class="btn btn-primary">
                     {{ __('ログイン') }}
                 </button>
-    
-                @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('パスワードを忘れた方はこちらから') }}
-                    </a>
-                @endif
                 
             </li>
             <li><a class="btn btn-link" href="{{ route('register') }}">
@@ -51,5 +44,5 @@
                 </a>
             </li>
         </ul>
-    
+    </form>
 @endsection

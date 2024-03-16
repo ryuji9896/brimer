@@ -13,7 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('maps', function (Blueprint $table) {
+            $table->id();
+            $table->string('map_name');
+            $table->string('map_img_path');
+            $table->string('site_name');
+            $table->timestamps();
+        });    
     }
 
     /**
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('maps');
     }
 };

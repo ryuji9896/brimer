@@ -11,11 +11,11 @@
         <li><p>IMPACT NO</p></li>
         <li><input type="text" name="impact_no" list="no" placeholder="着弾位置を選択">
         <datalist id="no">
-            <option>①</option>
-            <option>②</option>
-            <option>③</option>
-            <option>④</option>
-            <option>⑤</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
         </datalist>
         </li>
     </ul>
@@ -33,19 +33,19 @@
         <li><p>TIME</p></li>
         <li><input type="text" name="time" list="time(s)" placeholder="着弾時間を入力">
         <datalist id="time(s)">
-            <option>約3秒</option>
-            <option>約4秒</option>
-            <option>約5秒</option>
-            <option>約6秒</option>
-            <option>約7秒</option>
-            <option>約8秒</option>
-            <option>約9秒</option>
-            <option>約10秒</option>
-            <option>約11秒</option>
-            <option>約12秒</option>
-            <option>約13秒</option>
-            <option>約14秒</option>
-            <option>約15秒</option>
+            <option>3秒</option>
+            <option>4秒</option>
+            <option>5秒</option>
+            <option>6秒</option>
+            <option>7秒</option>
+            <option>8秒</option>
+            <option>9秒</option>
+            <option>10秒</option>
+            <option>11秒</option>
+            <option>12秒</option>
+            <option>13秒</option>
+            <option>14秒</option>
+            <option>15秒</option>
         </datalist>
         </li>
     </ul>
