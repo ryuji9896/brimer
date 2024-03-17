@@ -20,14 +20,27 @@ Route::get('/map/site', [FrontController::class, 'site_select'])->name('site');
 
 
 use App\Http\Controllers\MypageController;
+
+Auth::routes();
 Route::get('/mypage', [MypageController::class, 'mypage'])->name('mypage')->middleware('auth');
 
+
 use App\Http\Controllers\LineupController;
-Route::get('/lineup_create', [LineupController::class, 'create'])->name('create')->middleware('auth');
-Route::get('/lineup_edit', [LineupController::class, 'edit'])->name('edit')->middleware('auth');
+
+Auth::routes();
+Route::get('/lineup_create', [LineupController::class, 'index_create'])->name('view_create')->middleware('auth');
+Route::post('/lineup_create', [LineupController::class, 'create'])->name('post_create');
+
+Route::get('/lineup_edit', [LineupController::class, 'index_edit'])->name('view_edit')->middleware('auth');
+Route::post('/lineup_edit', [LineupController::class, 'edit'])->name('post_edit');
+
 Route::get('/lineup', [LineupController::class, 'lineup'])->name('lineup');
-Auth::routes();
 
-Auth::routes();
+use App\Http\Controllers\HomeController;
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+///homeは本来サイトでは不要だがログイン機能やDB用のマップ、サイトデーターを入力するために残してある
+
+Route::post('map_site_data', [LineuupController::class. 'DBmap_create'])->name('DBmap_create');
+Route::post('map_site_data', [LineuupController::class. 'DBsite_create'])->name('DBsite_create');
+    

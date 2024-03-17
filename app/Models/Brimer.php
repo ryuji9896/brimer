@@ -9,7 +9,7 @@ class Brimer extends Model
 {
     use HasFactory;
     
-    protected $gurded = array('id');
+    protected $guarded = array('id');
     
     public static $rules = array(
         'map_id' => 'required',

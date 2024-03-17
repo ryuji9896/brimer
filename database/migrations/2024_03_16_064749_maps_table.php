@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('map_name');
             $table->string('map_img_path');
-            $table->string('site_name');
             $table->timestamps();
         });    
     }
