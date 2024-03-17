@@ -15,13 +15,13 @@ class Brimer extends Model
         'map_id' => 'required',
         'site_name' => 'required',
         'impact_id' => 'required',
-        'stand_posi_txt' => 'required',
-        'stand_posi_img_path' => 'required',
-        'corsor_txt' => 'required',
-        'corsor_img_path' => 'required',
+        'stand_position_text' => 'required',
+        'stand_position_image_path' => 'required',
+        'corsor_text' => 'required',
+        'corsor_image_path' => 'required',
         'time' => 'required',
         'map_name' => 'required',
-        'map_img_path' => 'required',
-        'site_img_path' => 'required'
+        'map_image_path' => 'required',
+        'site_image_path' => 'required'
         );
 }

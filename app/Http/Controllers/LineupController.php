@@ -13,7 +13,7 @@ class LineupController extends Controller
        return view('lineup.create');
    }
  
-   public function create(Request $request)
+   public function add(Request $request)
     {
         $this->validate($request, Brimer::$rules);
         

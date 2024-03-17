@@ -21,14 +21,16 @@
         </ul>
         <ul>
             <li><p>IMPACT NO</p></li>
-            <li><input type="text" name="impact_no" list="no" placeholder="着弾位置を選択">
-            <datalist id="no">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </datalist>
+            <li><select name="impact_id">
+                <option value="" disabled selected>着弾位置を選択</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
             </li>
         </ul>
         <ul>
@@ -43,22 +45,21 @@
         </ul>
         <ul>
             <li><p>TIME</p></li>
-            <li><input type="text" name="time" list="time(s)" placeholder="着弾時間を入力">
-                <datalist id="time(s)">
-                    <option>3秒</option>
-                    <option>4秒</option>
-                    <option>5秒</option>
-                    <option>6秒</option>
-                    <option>7秒</option>
-                    <option>8秒</option>
-                    <option>9秒</option>
-                    <option>10秒</option>
-                    <option>11秒</option>
-                    <option>12秒</option>
-                    <option>13秒</option>
-                    <option>14秒</option>
-                    <option>15秒</option>
-                </datalist>
+            <li><select name="time" >
+                <option value="" disabled selected>着弾時間を選択</option>
+                <option value="3秒">3秒</option>
+                <option value="4秒">4秒</option>
+                <option value="5秒">5秒</option>
+                <option value="6秒">6秒</option>
+                <option value="7秒">7秒</option>
+                <option value="8秒">8秒</option>
+                <option value="9秒">9秒</option>
+                <option value="10秒">10秒</option>
+                <option value="11秒">11秒</option>
+                <option value="12秒">12秒</option>
+                <option value="13秒">13秒</option>
+                <option value="14秒">14秒</option>
+                <option value="15秒">15秒</option>
             </li>
         </ul>
         <input type="submit" class="btn btn-primary" value="定点投稿">

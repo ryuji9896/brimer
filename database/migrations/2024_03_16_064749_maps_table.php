@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('maps', function (Blueprint $table) {
             $table->id();
             $table->string('map_name');
-            $table->string('map_img_path');
+            $table->string('map_image_path');
             $table->timestamps();
         });    
     }

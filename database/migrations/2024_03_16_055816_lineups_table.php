@@ -18,10 +18,10 @@ return new class extends Migration
             $table->integer('map_id');
             $table->string('site_name');
             $table->integer('impact_id');
-            $table->string('stand_posi_txt');
-            $table->string('stand_posi_img_path');
-            $table->string('corsor_txt');
-            $table->string('corsor_img_path');
+            $table->string('standing_position_text');
+            $table->string('standing_position_image_path');
+            $table->string('corsor_text');
+            $table->string('corsor_image_path');
             $table->string('time');
             $table->timestamps();
         });
