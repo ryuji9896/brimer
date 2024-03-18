@@ -15,9 +15,4 @@ class Map extends Model
         'map_name' => 'required',
         'map_image_path' => 'required'
     );
-    
-    public function site()
-    {
-        return $this->hasMany('App\Models\Site');
-    }
 }

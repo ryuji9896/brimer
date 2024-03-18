@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Brimer extends Model
+class Lineups extends Model
 {
     use HasFactory;
     
@@ -16,9 +16,9 @@ class Brimer extends Model
         'site_name' => 'required',
         'impact_id' => 'required',
         'standing_position_text' => 'required',
-        'standing_position_image' => 'required',
+        'standing_position_image_path' => 'required',
         'corsor_text' => 'required',
-        'corsor_image' => 'required',
+        'corsor_image_path' => 'required',
         'time' => 'required'
         );
 }

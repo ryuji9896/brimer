@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Brimer;
+use App\Models\Lineups;
 
 class LineupController extends Controller
 {
@@ -13,19 +13,19 @@ class LineupController extends Controller
        return view('lineup.create');
    }
  
-   public function add(Request $request)
+   public function create(Request $request)
     {
-        $this->validate($request, Brimer::$rules);
+        $this->validate($request, Lineups::$rules);
         
-        $brimer = new Brimer;
+        $lineups = new Lineups;
         $form = $request->all();
         
         
-            $stand_post_img_path= $request->file('image')->store('public/image');
-            $brimer->stand_posi_img_path = basename($stand_post_img_path);
+            $standing_position_image_path= $request->file('image')->store('public/image');
+            $lineups->standing_position_image_path = basename($standing_position_image_path);
         
     
-        return view('top');
+        return redirect('/');
     }
     
     public function index_edit()

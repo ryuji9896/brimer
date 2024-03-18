@@ -17,7 +17,28 @@
                         
         <ul>
             <li><p>MAP NAME</p></li>
+            <li><select name="map_name">
+                <option value="" disabled selected>マップを選択</option>
+                <option value="1">アイスボックス</option>
+                <option value="2">アセント</option>
+                <option value="3">サンセット</option>
+                <option value="4">スプリット</option>
+                <option value="5">バインド</option>
+                <option value="6">パール</option>
+                <option value="7">フラクチャー</option>
+                <option value="8">ブリーズ</option>
+                <option value="9">ヘイヴン</option>
+                <option value="10">ロータス</option></select>
+            </li>
+        </ul>
+        <ul>
             <li><p>SITE NAME</p></li>
+            <li><select name="site_name">
+                <option value="" disabled selected>サイトを選択</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option></select>
+            </li>
         </ul>
         <ul>
             <li><p>IMPACT NO</p></li>
@@ -30,18 +51,18 @@
                 <option value="5">5</option>
                 <option value="6">6</option>
                 <option value="7">7</option>
-                <option value="8">8</option>
+                <option value="8">8</option></select>
             </li>
         </ul>
         <ul>
             <li><p>STANDING POSITION</p></li>
-            <li><input type="file" class="form-controle-file" name="stand_posi_img" placeholder="立ち位置の画像を選択"></li>
-            <li><input type="text" class="form-control" name="stand_posi_txt" rows="50" value="{{old('stand_posi_txt')}}" placeholder="立ち位置の説明文を入力(50文字以内)"></li>
+            <li><input type="file" class="form-control-file" name="standing_position_image"></li>
+            <li><input type="text" class="form-control" name="standing_position_text" rows="50" value="{{old('standing_position_text')}}" placeholder="立ち位置の説明文を入力(50文字以内)"></li>
         </ul>
         <ul>
             <li><p>CURSOR POSITION</p></li>
-            <li><input type="file" class="form-control-file" name="cursor_img"></li>
-            <li><input type="text" class="form-control" name="cursor_txt" rows="50" value="{{old('cursor_txt')}}" placeholder="目印の説明文を入力(50文字以内)"></li>
+            <li><input type="file" class="form-control-file" name="corsor_image"></li>
+            <li><input type="text" class="form-control" name="corsor_text" rows="50" value="{{old('corsor_txt')}}" placeholder="目印の説明文を入力(50文字以内)"></li>
         </ul>
         <ul>
             <li><p>TIME</p></li>
@@ -59,7 +80,7 @@
                 <option value="12秒">12秒</option>
                 <option value="13秒">13秒</option>
                 <option value="14秒">14秒</option>
-                <option value="15秒">15秒</option>
+                <option value="15秒">15秒</option></select>
             </li>
         </ul>
         <input type="submit" class="btn btn-primary" value="定点投稿">
