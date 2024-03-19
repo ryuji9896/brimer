@@ -18,11 +18,25 @@ class LineupController extends Controller
         $this->validate($request, Lineups::$rules);
         
         $lineups = new Lineups;
+        
         $form = $request->all();
+        $standing_position_image_path = $request->file('standing_position_image')->store('public/image/standing_position_image');
+        $lineups->standing_position_image_path = basename($standing_position_image_path);
+        
+        $corsor_image_path = $request->file('corsor_image')->store('public/image/corsor_image');
+        $lineups->corsor_image_path = basename($corsor_image_path);
+       
         
         
-            $standing_position_image_path= $request->file('image')->store('public/image');
-            $lineups->standing_position_image_path = basename($standing_position_image_path);
+        unset($form['_token']);
+        
+        unset($form['standing_position_image']);
+        
+        unset($form['corsor_image']);
+        
+        $lineups->fill($form);
+        $lineups->save();
+            
         
     
         return redirect('/');

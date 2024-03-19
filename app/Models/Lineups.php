@@ -12,13 +12,12 @@ class Lineups extends Model
     protected $guarded = array('id');
     
     public static $rules = array(
-        'map_name' => 'required',
         'site_name' => 'required',
         'impact_id' => 'required',
         'standing_position_text' => 'required',
-        'standing_position_image_path' => 'required',
+        'standing_position_image' => 'required',
         'corsor_text' => 'required',
-        'corsor_image_path' => 'required',
+        'corsor_image' => 'required',
         'time' => 'required'
         );
 }

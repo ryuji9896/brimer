@@ -3,7 +3,7 @@
 @section('content')
     <h1>定点投稿画面</h1>
     <img src="{{ secure_asset('image/map_split_impact_no.png')}}">
-    <form action="{{ route('post_create') }}" method="post">
+    <form action="{{ route('post_create') }}" method="post" enctype="multipart/form-data">
         
         @csrf
     
@@ -17,7 +17,7 @@
                         
         <ul>
             <li><p>MAP NAME</p></li>
-            <li><select name="map_name">
+            <li><select name="map_id">
                 <option value="" disabled selected>マップを選択</option>
                 <option value="1">アイスボックス</option>
                 <option value="2">アセント</option>
@@ -56,12 +56,12 @@
         </ul>
         <ul>
             <li><p>STANDING POSITION</p></li>
-            <li><input type="file" class="form-control-file" name="standing_position_image"></li>
+            <li><input type="file" id="standing_position_image" name="standing_position_image"></li>
             <li><input type="text" class="form-control" name="standing_position_text" rows="50" value="{{old('standing_position_text')}}" placeholder="立ち位置の説明文を入力(50文字以内)"></li>
         </ul>
         <ul>
             <li><p>CURSOR POSITION</p></li>
-            <li><input type="file" class="form-control-file" name="corsor_image"></li>
+            <li><input type="file" id="corsor_image" name="corsor_image"></li>
             <li><input type="text" class="form-control" name="corsor_text" rows="50" value="{{old('corsor_txt')}}" placeholder="目印の説明文を入力(50文字以内)"></li>
         </ul>
         <ul>
