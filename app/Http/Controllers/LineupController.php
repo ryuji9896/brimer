@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lineups;
+use App\Models\Map;
 
 class LineupController extends Controller
 {
@@ -54,6 +55,10 @@ class LineupController extends Controller
     
     public function lineup()
     {
-        return view('lineup.lineup');
+        $posts = Lineups::all();
+        
+        $impact_id_image_path = new Map;
+        
+        return view('lineup.lineup', ['posts' => $posts]);
     }
 }

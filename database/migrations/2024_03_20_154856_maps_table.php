@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('map_name');
             $table->string('map_image_path');
+            $table->string('impact_id_image_path');
             $table->timestamps();
         });    
     }

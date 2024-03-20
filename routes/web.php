@@ -39,8 +39,7 @@ Route::get('/lineup', [LineupController::class, 'lineup'])->name('lineup');
 use App\Http\Controllers\HomeController;
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-///homeは本来サイトでは不要だがログイン機能やDB用のマップ、サイトデーターを入力するために残してある
-
-Route::post('map_site_data', [LineuupController::class. 'DBmap_create'])->name('DBmap_create');
-Route::post('map_site_data', [LineuupController::class. 'DBsite_create'])->name('DBsite_create');
+Route::post('/home', [HomeController::class, 'map_data_add'])->name('map_data_add');
+Route::post('/home', [HomeController::class, 'site_data_add'])->name('site_data_add');
     
+/*homeはサイトで閲覧、投稿するためには不要だがログイン機能やDB用のマップ、サイトデーターを入力するために残してある*/

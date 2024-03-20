@@ -56,13 +56,13 @@
         </ul>
         <ul>
             <li><p>STANDING POSITION</p></li>
-            <li><input type="file" id="standing_position_image" name="standing_position_image"></li>
+            <li><input type="file" class="standing_position_image" name="standing_position_image"></li>
             <li><input type="text" class="form-control" name="standing_position_text" rows="50" value="{{old('standing_position_text')}}" placeholder="立ち位置の説明文を入力(50文字以内)"></li>
         </ul>
         <ul>
             <li><p>CURSOR POSITION</p></li>
-            <li><input type="file" id="corsor_image" name="corsor_image"></li>
-            <li><input type="text" class="form-control" name="corsor_text" rows="50" value="{{old('corsor_txt')}}" placeholder="目印の説明文を入力(50文字以内)"></li>
+            <li><input type="file" class="corsor_image" name="corsor_image"></li>
+            <li><input type="text" class="form-control" name="corsor_text" rows="50" value="{{old('corsor_text')}}" placeholder="目印の説明文を入力(50文字以内)"></li>
         </ul>
         <ul>
             <li><p>TIME</p></li>

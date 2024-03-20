@@ -13,7 +13,7 @@ class Site extends Model
 
     public static $rules = array(
         'site_name' => 'required',
-        'site_image_path' => 'required',
+        'site_image' => 'required',
         'map_id' => 'required'
     );
 }

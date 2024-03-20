@@ -13,6 +13,7 @@ class Map extends Model
 
     public static $rules = array(
         'map_name' => 'required',
-        'map_image_path' => 'required'
+        'map_image' => 'required',
+        'impact_id_image' => 'required'
     );
 }
