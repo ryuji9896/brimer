@@ -19,5 +19,5 @@ class Lineups extends Model
         'corsor_text' => 'required',
         'corsor_image' => 'required',
         'time' => 'required'
-        );
+    );
 }

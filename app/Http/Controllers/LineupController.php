@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lineups;
-use App\Models\Map;
+
 
 class LineupController extends Controller
 {

@@ -3,30 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Maps;
-use App\Models\Sites;
+use App\Models\Map;
+use App\Models\Site;
 
-
-class HomeController extends Controller
+class DBcreateController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function map_index()
     {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
+        return view('DBcreate.map_create');
     }
     
      public function map_add(Request $request)  
@@ -38,6 +22,9 @@ class HomeController extends Controller
         $form = $request->all();
         $map_image_path = $request->file('map_image')->store('public/image/map_image');
         $map->map_image_path = basename($map_image_path);
+        
+        $impact_id_image_path = $request->file('impact_id_image')->store('public/image/impact_id_image');
+        $map->impact_id_image_path = basename($impact_id_image_path);
     
         unset($form['_token']);
         
@@ -50,9 +37,14 @@ class HomeController extends Controller
             
         
     
-        return redirect('index_home');
+        return redirect('map_index');
     }
     
+    
+     public function site_index()
+    {
+        return view('DBcreate.site_create');
+    }
     public function site_add(Request $request)  
     {
         $this->validate($request, Site::$rules);
@@ -72,6 +64,6 @@ class HomeController extends Controller
             
         
     
-        return redirect('index_home');
+        return redirect('site_index');
     }
 }

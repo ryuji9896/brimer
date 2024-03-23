@@ -36,10 +36,12 @@ Route::post('/lineup_edit', [LineupController::class, 'edit'])->name('post_edit'
 
 Route::get('/lineup', [LineupController::class, 'lineup'])->name('lineup');
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DBcreateController;
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::post('/home', [HomeController::class, 'map_data_add'])->name('map_data_add');
-Route::post('/home', [HomeController::class, 'site_data_add'])->name('site_data_add');
+Route::get('/DBcreate_map', [DBcreateController::class, 'map_index'])->name('map_view');
+Route::post('/DBcreate_map', [DBcreateController::class, 'map_add'])->name('map_add');
+
+Route::get('/DBcreate_site', [DBcreateController::class, 'site_index'])->name('site_view');
+Route::post('/DBcreate_site', [DBcreateController::class, 'site_add'])->name('site_add');
     
 /*homeはサイトで閲覧、投稿するためには不要だがログイン機能やDB用のマップ、サイトデーターを入力するために残してある*/

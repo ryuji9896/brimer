@@ -10,7 +10,7 @@ class Map extends Model
     use HasFactory;
     
     protected $guarded = array('id');
-
+    
     public static $rules = array(
         'map_name' => 'required',
         'map_image' => 'required',
