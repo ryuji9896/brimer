@@ -1,8 +1,8 @@
-@extends('layouts.admin')
-@section('title','DBマップデータ追加')
+@extends('layouts.app')
+@section('title','DBマップデータの編集')
 @section('content')
-    <h1>DB用マップデータ入力画面</h1>
-    <form action="{{ route('mapCreate') }}" method="post" enctype="multipart/form-data">
+    <h1>DB用マップデータ編集画面</h1>
+    <form action="{{ route('mapEdit') }}" method="post" enctype="multipart/form-data">
     
         @csrf
         
@@ -13,11 +13,12 @@
                 @endforeach
             </ul>
         @endif
+        
         <ul>
             <ul>
                 <li><p>MAP NAME</p></li>
                 <li><select name="map_name">
-                    <option value="" disabled selected>マップを選択</option>
+                    <option value="{{ $maps_form->map_name }}">{{ $maps_form->map_name }}</option>
                     <option value="アセント">アセント</option>
                     <option value="スプリット">スプリット</option>
                     <option value="ヘイヴン">ヘイヴン</option>
@@ -35,5 +36,3 @@
         </ul>   
         <input type="submit" class="btn btn-primary" value="マップデータ投稿">
     </form>
-    <a href="{{ route('siteView')}}"><h2>DBサイトデータ追加</h2></a>
-@endsection

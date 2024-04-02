@@ -38,10 +38,10 @@ Route::get('/lineup', [LineupController::class, 'lineup'])->name('lineup');
 
 use App\Http\Controllers\DBcreateController;
 
-Route::get('/DBcreate_map', [DBcreateController::class, 'map_index'])->name('map_view');
-Route::post('/DBcreate_map', [DBcreateController::class, 'map_add'])->name('map_add');
+Route::get('/DBcreate_map', [DBcreateController::class, 'mapAdd'])->name('mapView');
+Route::post('/DBcreate_map', [DBcreateController::class, 'mapCreate'])->name('mapCreate');
 
-Route::get('/DBcreate_site', [DBcreateController::class, 'site_index'])->name('site_view');
-Route::post('/DBcreate_site', [DBcreateController::class, 'site_add'])->name('site_add');
+Route::get('/DBcreate_site', [DBcreateController::class, 'siteAdd'])->name('siteView');
+Route::post('/DBcreate_site', [DBcreateController::class, 'siteCreate'])->name('siteCreate');
     
 /*homeはサイトで閲覧、投稿するためには不要だがログイン機能やDB用のマップ、サイトデーターを入力するために残してある*/

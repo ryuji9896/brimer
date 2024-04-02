@@ -144,7 +144,6 @@ p {
 
 .d-flex {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .clear {
@@ -158,4 +157,28 @@ p {
   .mobile-none {
     display: block;
   }
+}
+
+header ul {
+  align-items: stretch;
+  line-height: 0;
+  justify-content: space-between;
+}
+header ul li {
+  width: 34%;
+  border-right: 1px solid #fff;
+}
+header ul li:last-of-type {
+  border-right: none;
+}
+header ul li a {
+  display: flex;
+  color: #EC9712;
+  width: 100%;
+  background: #000;
+  height: 100%;
+  align-items: center;
+  font-size: 34px;
+  font-weight: bold;
+  justify-content: center;
 }

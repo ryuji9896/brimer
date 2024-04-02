@@ -2,7 +2,7 @@
 @section('title','DBサイトデータ追加')
 @section('content')
     <h1>DB用サイトデータ入力画面</h1>
-    <form action="{{ route('site_add') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('siteCreate') }}" method="post" enctype="multipart/form-data">
     
         @csrf
         

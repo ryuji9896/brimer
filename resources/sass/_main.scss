@@ -1,0 +1,26 @@
+header{
+    ul{
+        align-items:stretch;
+        line-height:0;
+        justify-content:space-between;
+        li{
+            width: 34%;
+            border-right:1px solid #fff;
+            &:last-of-type{
+                border-right:none;
+            }
+            a{
+                display:flex;
+                color:#EC9712;
+                width:100%;
+                background:#000;
+                height:100%;
+                align-items:center;
+                font-size:34px;
+                font-weight:bold;
+                justify-content:center;
+            }
+            
+        }
+    }
+}

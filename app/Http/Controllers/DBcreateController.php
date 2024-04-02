@@ -8,12 +8,12 @@ use App\Models\Site;
 
 class DBcreateController extends Controller
 {
-    public function map_index()
+    public function mapAdd()
     {
         return view('DBcreate.map_create');
     }
     
-     public function map_add(Request $request)  
+     public function mapCreate(Request $request)  
     {
         $this->validate($request, Map::$rules);
         
@@ -32,20 +32,40 @@ class DBcreateController extends Controller
         
         unset($form['impact_id_image']);
         
-        $site->fill($form);
-        $site->save();
+        $map->fill($form);
+        $map->save();
             
         
     
-        return redirect('map_index');
+        return redirect('/DBcreate_map');
+    }
+    
+     public function edit(Request $request)
+     {
+         $map = $Map::find($request->id);
+         if (empty($map)) {
+             abort(404);
+         }
+         return view('DBedit_map' , ['map_form' => $map]);
+     }
+    
+    public function update(Request $request)
+    {
+        $this->validate($request, Map::$rules);
+        $maps = Map::find($request->id);
+        $maps_form = $request->all();
+        unset($maps_form['_token']);
+        $maps->fill($maps_form)->save();
+        
+        return redirect('/DBcreate_map');
     }
     
     
-     public function site_index()
+     public function siteAdd()
     {
         return view('DBcreate.site_create');
     }
-    public function site_add(Request $request)  
+    public function siteCreate(Request $request)  
     {
         $this->validate($request, Site::$rules);
         
@@ -64,6 +84,6 @@ class DBcreateController extends Controller
             
         
     
-        return redirect('site_index');
+        return redirect('DBcreate_site');
     }
 }
