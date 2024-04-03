@@ -37,10 +37,13 @@
                     <option value="" disabled selected>サイトを選択</option>
                     <option value="A">A</option>
                     <option value="B">B</option>
-                    <option value="C">C</option>
+                    <option value="C">C</option></select>
                 </li>
             </ul>
-            <li><input type="file" class="site_image" name="site_image" placeholder="サイトの画像を選択"></li>
+            <ul>
+                <li><p>サイト画像</p></li>
+                <li><input type="file" class="site_image" name="site_image" placeholder="サイトの画像を選択"></li>
+            </ul>
         </ul>   
         <input type="submit" class="btn btn-primary" value="サイトデータを投稿">
     </form>

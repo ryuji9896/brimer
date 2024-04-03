@@ -38,6 +38,8 @@ Route::get('/lineup', [LineupController::class, 'lineup'])->name('lineup');
 
 use App\Http\Controllers\DBcreateController;
 
+Route::get('/DBcreate_index', [DBcreateController::class, 'mapIndex'])->name('mapIndex');
+
 Route::get('/DBcreate_map', [DBcreateController::class, 'mapAdd'])->name('mapView');
 Route::post('/DBcreate_map', [DBcreateController::class, 'mapCreate'])->name('mapCreate');
 

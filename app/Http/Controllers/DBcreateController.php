@@ -8,6 +8,12 @@ use App\Models\Site;
 
 class DBcreateController extends Controller
 {
+    public function mapIndex(Request $request)
+    {
+        $maps = Map::all();
+        return view('DBcreate.map_index',['maps' => $maps]);
+    }
+    
     public function mapAdd()
     {
         return view('DBcreate.map_create');
