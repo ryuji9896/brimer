@@ -43,6 +43,9 @@ Route::get('/DBcreate_index', [DBcreateController::class, 'mapIndex'])->name('ma
 Route::get('/DBcreate_map', [DBcreateController::class, 'mapAdd'])->name('mapView');
 Route::post('/DBcreate_map', [DBcreateController::class, 'mapCreate'])->name('mapCreate');
 
+Route::get('/DBcreate_edit', [DBcreateController::class, 'mapEdit'])->name('mapEdit');
+Route::post('/DBcreate_edit', [DBcreateController::class, 'mapEdit'])->name('mapEdit');
+
 Route::get('/DBcreate_site', [DBcreateController::class, 'siteAdd'])->name('siteView');
 Route::post('/DBcreate_site', [DBcreateController::class, 'siteCreate'])->name('siteCreate');
     

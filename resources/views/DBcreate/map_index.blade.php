@@ -8,5 +8,7 @@
                 <li>・ID{{ $map->id }}</li>
                 <li>-MAP NAME-{{ $map->map_name }}</li>
             </ul>
+             <a href="{{ route('mapEdit', ['id' => $map->id]) }}">編集</a>
         @endforeach
     </tbody>
+@endsection

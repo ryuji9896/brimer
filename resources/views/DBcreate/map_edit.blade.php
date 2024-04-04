@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title','DBマップデータの編集')
 @section('content')
     <h1>DB用マップデータ編集画面</h1>
@@ -18,7 +18,7 @@
             <ul>
                 <li><p>MAP NAME</p></li>
                 <li><select name="map_name">
-                    <option value="{{ $maps_form->map_name }}">{{ $maps_form->map_name }}</option>
+                    <option value="{{ $map_form->map_name }}">{{ $map_form->map_name }}(登録している内容)</option>
                     <option value="アセント">アセント</option>
                     <option value="スプリット">スプリット</option>
                     <option value="ヘイヴン">ヘイヴン</option>
@@ -36,3 +36,4 @@
         </ul>   
         <input type="submit" class="btn btn-primary" value="マップデータ投稿">
     </form>
+    @endsection
