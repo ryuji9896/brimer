@@ -8,10 +8,11 @@ use App\Models\Site;
 
 class DBcreateController extends Controller
 {
-    public function mapIndex(Request $request)
+    public function DBIndex()
     {
         $maps = Map::all();
-        return view('DBcreate.map_index',['maps' => $maps]);
+        $sites = Site::all();
+        return view('DBcreate.DB_index',['maps' => $maps ], ['sites' => $sites]);
     }
     
     public function mapAdd()
@@ -25,23 +26,21 @@ class DBcreateController extends Controller
         
         $map = new Map;
         
-        $form = $request->all();
-        $map_image_path = $request->file('map_image')->store('public/image/map_image');
-        $map->map_image_path = basename($map_image_path);
+        $map_form = $request->all();
+        $map_image = $request->file('map_image')->store('public/image/map_image');
+        $map_form['map_image_path'] = basename($map_image);
         
-        $impact_id_image_path = $request->file('impact_id_image')->store('public/image/impact_id_image');
-        $map->impact_id_image_path = basename($impact_id_image_path);
+        $impact_id_image = $request->file('impact_id_image')->store('public/image/impact_id_image');
+        $map_form['impact_id_image_path'] = basename($impact_id_image);
     
-        unset($form['_token']);
+        unset($map_form['_token']);
         
-        unset($form['map_image']);
+        unset($map_form['map_image']);
         
-        unset($form['impact_id_image']);
+        unset($map_form['impact_id_image']);
         
-        $map->fill($form);
+        $map->fill($map_form);
         $map->save();
-            
-        
     
         return redirect('/DBcreate_map');
     }
@@ -55,26 +54,33 @@ class DBcreateController extends Controller
          return view('DBcreate.map_edit' , ['map_form' => $map]);
      }
     
-    public function update(Request $request)
+    public function mapUpdate(Request $request)
     {
-        $this->validate($request, Map::$rules);
         $map = Map::find($request->id);
         $map_form = $request->all();
         
-        $form = $request->all();
-        $map_image_path = $request->file('map_image')->store('public/image/map_image');
-        $map->map_image_path = basename($map_image_path);
+        if ($request->file('map_image')) {
+            $map_image = $request->file('map_image')->store('public/image/map_image');
+            $map_form['map_image_path'] = basename($map_image);
+        } else {
+            $map_form['map_image_path'] = $map->map_image_path;
+        }
         
-        $impact_id_image_path = $request->file('impact_id_image')->store('public/image/impact_id_image');
-        $map->impact_id_image_path = basename($impact_id_image_path);
+        if ($request->file('impact_id_image')) {
+            $impact_id_image = $request->file('impact_id_image')->store('public/image/impact_id_image');
+            $map_form['impact_id_image_path'] = basename($impact_id_image);
+        } else {
+            $map_form['impact_id_image_path'] = $map->impact_id_image_path;
+        }
         
-        unset($form['_token']);
+        unset($map_form['_token']);
         
-        unset($form['map_image']);
+        unset($map_form['map_image']);
         
-        unset($form['impact_id_image']);
+        unset($map_form['impact_id_image']);
         
-        $map->fill($form)->save();
+        $map->fill($map_form)->save();
+        
         
         return redirect('/DBcreate_index');
     }
@@ -89,18 +95,15 @@ class DBcreateController extends Controller
         
         $site = new Site;
         
-        $form = $request->all();
+        $site_form = $request->all();
         $site_image_path = $request->file('site_image')->store('public/image/site_image');
-        $site->site_image_path = basename($site_image_path);
+        $site_form['site_image_path'] = basename($site_image_path);
     
-        unset($form['_token']);
+        unset($site_form['_token']);
         
-        unset($form['site_image']);
+        unset($site_form['site_image']);
         
-        $site->fill($form);
-        $site->save();
-            
-        
+        $site->fill($site_form)->save();
     
         return redirect('DBcreate_site');
     }

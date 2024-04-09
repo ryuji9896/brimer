@@ -32,7 +32,7 @@
                 </li>
             </ul>
             <ul>
-                <li><p>MAP NAME</p></li>
+                <li><p>SITE NAME</p></li>
                 <li><select name="site_name">
                     <option value="" disabled selected>サイトを選択</option>
                     <option value="A">A</option>

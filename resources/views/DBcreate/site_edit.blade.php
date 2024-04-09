@@ -1,8 +1,8 @@
 @extends('layouts.admin')
-@section('title','DBマップデータの編集')
+@section('title','DBサイトデータの編集')
 @section('content')
-    <h1>DB用マップデータ編集画面</h1>
-    <form action="{{ route('mapUpdate') }}" method="post" enctype="multipart/form-data">
+    <h1>DB用サイトデータ編集画面</h1>
+    <form action="{{ route('siteUpdate') }}" method="post" enctype="multipart/form-data">
     
         @csrf
         
@@ -16,9 +16,9 @@
         
         <ul>
             <ul>
-                <li><p>MAP NAME</p></li>
+                <li><p>SITE NAME</p></li>
                 <li><select name="map_name">
-                    <option value="{{ $map_form->map_name }}">{{ $map_form->map_name }}(登録している内容)</option>
+                    <option value="{{ $site_form->map_name }}">{{ $site_form->map_name }}(登録している内容)</option>
                     <option value="アセント">アセント</option>
                     <option value="スプリット">スプリット</option>
                     <option value="ヘイヴン">ヘイヴン</option>
@@ -31,12 +31,19 @@
                     <option value="サンセット">サンセット</option></select>
                 </li>
             </ul>
-            <li>マップ画像<input type="file" class="map_image" name="map_image" placeholder="マップの画像を選択"></li>
-            <li><img src="{{ secure_asset('storage/image/map_image/' . $map_form->map_image_path) }}"></li>
-            <li>着弾位置画像<input type="file" class="impact_id_image" name="impact_id_image" placeholder="着弾位置の画像を選択"></li>
-            <li><img src="{{ secure_asset('storage/image/impact_id_image/' . $map_form->impact_id_image_path) }}"></li>
-            <li><input type="hidden" name="id" value="{{ $map_form->id }}"></li>
+            <ul>
+                <li><p>SITE NAME</p></li>
+                <li><select name="site_name">
+                    <option value="{{ $site_form->site_name }}">{{ $site_form->site_name }}(登録している内容)</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option></select>
+                </li>
+            </ul>
+            <li>サイト画像<input type="file" class="site_image" name="site_image" placeholder="サイトの画像を選択"></li>
+            <li><img src="{{ secure_asset('storage/image/site_image/' . $site_form->site_image_path) }}"></li>
+            <li><input type="hidden" name="id" value="{{ $site_form->id }}"></li>
         </ul>   
-        <input type="submit" class="btn btn-primary" value="マップデータ更新">
+        <input type="submit" class="btn btn-primary" value="サイトデータ更新">
     </form>
     @endsection

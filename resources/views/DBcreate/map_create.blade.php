@@ -35,5 +35,4 @@
         </ul>   
         <input type="submit" class="btn btn-primary" value="マップデータ投稿">
     </form>
-    <a href="{{ route('siteView')}}"><h2>DBサイトデータ追加</h2></a>
 @endsection

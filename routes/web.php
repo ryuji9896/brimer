@@ -38,15 +38,18 @@ Route::get('/lineup', [LineupController::class, 'lineup'])->name('lineup');
 
 use App\Http\Controllers\DBcreateController;
 
-Route::get('/DBcreate_index', [DBcreateController::class, 'mapIndex'])->name('mapIndex');
+Route::get('/DBcreate_index', [DBcreateController::class, 'DBIndex'])->name('DBIndex');
 
 Route::get('/DBcreate_map', [DBcreateController::class, 'mapAdd'])->name('mapView');
 Route::post('/DBcreate_map', [DBcreateController::class, 'mapCreate'])->name('mapCreate');
 
-Route::get('/DBcreate_edit', [DBcreateController::class, 'mapEdit'])->name('mapEdit');
-Route::post('/DBcreate_edit', [DBcreateController::class, 'mapEdit'])->name('mapEdit');
+Route::get('/DBedit_map', [DBcreateController::class, 'mapEdit'])->name('mapEdit');
+Route::post('//DBedit_map', [DBcreateController::class, 'mapUpdate'])->name('mapUpdate');
 
 Route::get('/DBcreate_site', [DBcreateController::class, 'siteAdd'])->name('siteView');
 Route::post('/DBcreate_site', [DBcreateController::class, 'siteCreate'])->name('siteCreate');
+
+Route::get('/DBedit_site', [DBcreateController::class, 'siteEdit'])->name('siteEdit');
+Route::post('/DBedit_site', [DBcreateController::class, 'siteUpdate'])->name('siteUpdate');
     
 /*homeはサイトで閲覧、投稿するためには不要だがログイン機能やDB用のマップ、サイトデーターを入力するために残してある*/

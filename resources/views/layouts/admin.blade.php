@@ -12,7 +12,7 @@
         <header>
             @include('parts/nav')
         </header>
-        <p><a href="{{ route('mapIndex')}}">DB入力ページ</a></p>
+        <p><a href="{{ route('DBIndex')}}">DBページ</a></p>
         @yield('content')
     </body>
 </html>
