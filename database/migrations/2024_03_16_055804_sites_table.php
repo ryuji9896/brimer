@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
-            $table->integer('map_id');
+            $table->integer('map_name');
             $table->string('site_name');
             $table->string('site_image_path');
             $table->timestamps();

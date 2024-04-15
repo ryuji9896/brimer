@@ -17,27 +17,27 @@
         <ul>
             <ul>
                 <li><p>MAP NAME</p></li>
-                <li><select name="map_id">
-                    <option value="" disabled selected>マップを選択</option>
-                    <option value="1">アセント</option>
-                    <option value="2">スプリット</option>
-                    <option value="3">ヘイヴン</option>
-                    <option value="4">バインド</option>
-                    <option value="5">アイスボックス</option>
-                    <option value="6">ブリーズ</option>
-                    <option value="7">フラクチャー</option>
-                    <option value="8">パール</option>
-                    <option value="9">ロータス</option>
-                    <option value="10">サンセット</option></select>
+                <li><select name="map_name">
+                    <option value="" disabled selected>マップ選択</option>
+                    <option value="1"　@if( old('map_name') === '1' ) selected @endif>アセント</option>
+                    <option value="2" @if( old('map_name') === '2' ) selected @endif>スプリット</option>
+                    <option value="3" @if( old('map_name') === '3' ) selected @endif>ヘイヴン</option>
+                    <option value="4" @if( old('map_name') === '4' ) selected @endif>バインド</option>
+                    <option value="5" @if( old('map_name') === '5' ) selected @endif>アイスボックス</option>
+                    <option value="6" @if( old('map_name') === '6' ) selected @endif>ブリーズ</option>
+                    <option value="7" @if( old('map_name') === '7' ) selected @endif>フラクチャー</option>
+                    <option value="8" @if( old('map_name') === '8' ) selected @endif>パール</option>
+                    <option value="9" @if( old('map_name') === '9' ) selected @endif>ロータス</option>
+                    <option value="10" @if( old('map_name') === '10' ) selected @endif>サンセット</option></select>
                 </li>
             </ul>
             <ul>
                 <li><p>SITE NAME</p></li>
-                <li><select name="site_name">
-                    <option value="" disabled selected>サイトを選択</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option></select>
+                <li><select name="site_name" value=>
+                    <option value="" disabled selected>サイト選択</option>
+                    <option value="A" @if( old('site_name') === 'A' ) selected @endif>A</option>
+                    <option value="B" @if( old('site_name') === 'B' ) selected @endif>B</option>
+                    <option value="C" @if( old('site_name') === 'C' ) selected @endif>C</option></select>
                 </li>
             </ul>
             <ul>

@@ -85,7 +85,16 @@ class DBcreateController extends Controller
         return redirect('/DBcreate_index');
     }
     
-     public function siteAdd()
+    public function mapDelete(Request $request)
+    {
+        $map = Map::find($request->id);
+        
+        $map->delete();
+        
+        return redirect('/DBcreate_index');
+    }
+    
+    public function siteAdd()
     {
         return view('DBcreate.site_create');
     }
@@ -106,5 +115,45 @@ class DBcreateController extends Controller
         $site->fill($site_form)->save();
     
         return redirect('DBcreate_site');
+    }
+    
+    public function siteEdit(Request $request)
+     {
+         $site = Site::find($request->id);
+         if (empty($site)) {
+             abort(404);
+         }
+         return view('DBcreate.site_edit' , ['site_form' => $site]);
+     }
+    
+    public function siteUpdate(Request $request)
+    {
+        $site = Site::find($request->id);
+        $site_form = $request->all();
+        
+        if ($request->file('site_image')) {
+            $site_image = $request->file('site_image')->store('public/image/site_image');
+            $site_form['site_image_path'] = basename($site_image);
+        } else {
+            $site_form['site_image_path'] = $site->site_image_path;
+        }
+        
+        unset($site_form['_token']);
+        
+        unset($site_form['site_image']);
+        
+        $site->fill($site_form)->save();
+        
+        
+        return redirect('/DBcreate_index');
+    }
+    
+    public function siteDelete(Request $request)
+    {
+        $site = Site::find($request->id);
+        
+        $site->delete();
+        
+        return redirect('/DBcreate_index');
     }
 }

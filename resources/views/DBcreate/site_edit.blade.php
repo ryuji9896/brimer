@@ -16,19 +16,19 @@
         
         <ul>
             <ul>
-                <li><p>SITE NAME</p></li>
+                <li><p>MAP NAME</p></li>
                 <li><select name="map_name">
                     <option value="{{ $site_form->map_name }}">{{ $site_form->map_name }}(登録している内容)</option>
-                    <option value="アセント">アセント</option>
-                    <option value="スプリット">スプリット</option>
-                    <option value="ヘイヴン">ヘイヴン</option>
-                    <option value="バインド">バインド</option>
-                    <option value="アイスボックス">アイスボックス</option>
-                    <option value="ブリーズ">ブリーズ</option>
-                    <option value="フラクチャー">フラクチャー</option>
-                    <option value="パール">パール</option>
-                    <option value="ロータス">ロータス</option>
-                    <option value="サンセット">サンセット</option></select>
+                    <option value="1">アセント</option>
+                    <option value="2">スプリット</option>
+                    <option value="3">ヘイヴン</option>
+                    <option value="4">バインド</option>
+                    <option value="5">アイスボックス</option>
+                    <option value="6">ブリーズ</option>
+                    <option value="7">フラクチャー</option>
+                    <option value="8">パール</option>
+                    <option value="9">ロータス</option>
+                    <option value="10">サンセット</option></select>
                 </li>
             </ul>
             <ul>

@@ -44,12 +44,16 @@ Route::get('/DBcreate_map', [DBcreateController::class, 'mapAdd'])->name('mapVie
 Route::post('/DBcreate_map', [DBcreateController::class, 'mapCreate'])->name('mapCreate');
 
 Route::get('/DBedit_map', [DBcreateController::class, 'mapEdit'])->name('mapEdit');
-Route::post('//DBedit_map', [DBcreateController::class, 'mapUpdate'])->name('mapUpdate');
+Route::post('/DBedit_map', [DBcreateController::class, 'mapUpdate'])->name('mapUpdate');
+
+Route::get('/DBcreate_map_delete', [DBcreateController::class, 'mapDelete'])->name('mapDelete');
 
 Route::get('/DBcreate_site', [DBcreateController::class, 'siteAdd'])->name('siteView');
 Route::post('/DBcreate_site', [DBcreateController::class, 'siteCreate'])->name('siteCreate');
 
 Route::get('/DBedit_site', [DBcreateController::class, 'siteEdit'])->name('siteEdit');
 Route::post('/DBedit_site', [DBcreateController::class, 'siteUpdate'])->name('siteUpdate');
+
+Route::get('/DBcreate_site_delete', [DBcreateController::class, 'siteDelete'])->name('siteDelete');
     
 /*homeはサイトで閲覧、投稿するためには不要だがログイン機能やDB用のマップ、サイトデーターを入力するために残してある*/

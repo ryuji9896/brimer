@@ -17,17 +17,17 @@
             <ul>
                 <li><p>MAP NAME</p></li>
                 <li><select name="map_name">
-                    <option value="" disabled selected>マップを選択</option>
-                    <option value="アセント">アセント</option>
-                    <option value="スプリット">スプリット</option>
-                    <option value="ヘイヴン">ヘイヴン</option>
-                    <option value="バインド">バインド</option>
-                    <option value="アイスボックス">アイスボックス</option>
-                    <option value="ブリーズ">ブリーズ</option>
-                    <option value="フラクチャー">フラクチャー</option>
-                    <option value="パール">パール</option>
-                    <option value="ロータス">ロータス</option>
-                    <option value="サンセット">サンセット</option></select>
+                    <option value="" disabled selected>マップ選択</option>
+                    <option value="アセント"　@if( old('map_name') === 'アセント' ) selected @endif>アセント</option>
+                    <option value="スプリット" @if( old('map_name') === 'スプリット' ) selected @endif>スプリット</option>
+                    <option value="ヘイヴン" @if( old('map_name') === 'ヘイヴン' ) selected @endif>ヘイヴン</option>
+                    <option value="バインド" @if( old('map_name') === 'バインド' ) selected @endif>バインド</option>
+                    <option value="アイスボックス" @if( old('map_name') === 'アイスボックス' ) selected @endif>アイスボックス</option>
+                    <option value="ブリーズ" @if( old('map_name') === 'ブリーズ' ) selected @endif>ブリーズ</option>
+                    <option value="フラクチャー" @if( old('map_name') === 'フラクチャー' ) selected @endif>フラクチャー</option>
+                    <option value="パール" @if( old('map_name') === 'パール' ) selected @endif>パール</option>
+                    <option value="ロータス" @if( old('map_name') === 'ロータス' ) selected @endif>ロータス</option>
+                    <option value="サンセット" @if( old('map_name') === 'サンセット' ) selected @endif>サンセット</option></select>
                 </li>
             </ul>
             <li>マップ画像<input type="file" class="map_image" name="map_image" placeholder="マップの画像を選択"></li>

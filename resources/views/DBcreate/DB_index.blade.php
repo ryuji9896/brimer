@@ -10,7 +10,10 @@
                 <li>・ID{{ $map->id }}</li>
                 <li>-MAP NAME-{{ $map->map_name }}</li>
             </ul>
-             <a href="{{ route('mapEdit', ['id' => $map->id]) }}">編集</a>
+            <ul>
+                <li><a href="{{ route('mapEdit', ['id' => $map->id]) }}">編集</a></li>
+                <li><a href="{{ route('mapDelete', ['id' => $map->id]) }}">削除</a></li>
+            </ul>    
         @endforeach
     </tbody>
     
@@ -19,9 +22,13 @@
         @foreach($sites as $site)
             <ul>
                 <li>・ID{{ $site->id }}</li>
-                <li>-MAP NAME-{{ $site->site_name }}</li>
+                <li>-MAP NAME-{{ $site->map_name }}</li>
+                <li>-SITE NAME-{{ $site->site_name }}</li>
             </ul>
-             <a href="{{ route('siteEdit', ['id' => $site->id]) }}">編集</a>
+            <ul>
+                <li><a href="{{ route('siteEdit', ['id' => $site->id]) }}">編集</a></li>
+                <li><a href="{{ route('siteDelete', ['id' => $site->id]) }}">削除</a></li>
+            </ul>
         @endforeach
     </tbody>
 @endsection
