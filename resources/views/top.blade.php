@@ -3,8 +3,8 @@
 @section('content')
     <h1>TOPページ</h1>
     <ul>
-        <li><a href="{{route('view_edit')}}"><h2>定点一覧→</h2></a></li>
-        <!--↑転移先をmap→editに編集中-->
+        <li><a href="{{route('map')}}"><h2>定点一覧→</h2></a></li>
+        <!--↑転移先をmap_select→view_editに編集中-->
         <li><p>他ユーザーが投稿した定点を閲覧</p></li>
     </ul>
     <ul>

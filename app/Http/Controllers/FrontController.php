@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Map;
+
 class FrontController extends Controller
 {
     
@@ -14,7 +16,11 @@ class FrontController extends Controller
     
     public function map_select()
     {
-        return view('map.map');
+        $maps = Map::all(); 
+        
+        return view('map.map',[ 'maps' => $maps ]);
+        
+        
     }
     
     public function site_select()

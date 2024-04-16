@@ -16,4 +16,8 @@ class Map extends Model
         'map_image' => 'required',
         'impact_id_image' => 'required'
     );
+    public function site()
+    {
+        return $this->hasMany('App\Models\Site');
+    }
 }

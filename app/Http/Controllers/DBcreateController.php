@@ -12,7 +12,7 @@ class DBcreateController extends Controller
     {
         $maps = Map::all();
         $sites = Site::all();
-        return view('DBcreate.DB_index',['maps' => $maps ], ['sites' => $sites]);
+        return view('DBcreate.DB_index',[ 'maps' => $maps ], [ 'sites' => $sites ]);
     }
     
     public function mapAdd()

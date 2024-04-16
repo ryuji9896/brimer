@@ -10,4 +10,5 @@
             <td>{{ $lineups->impact_id}}</td>
             <td>{{ $map->impact_id_image_path}}</td>
         </tr>
+    @endforeach
 @endsection
