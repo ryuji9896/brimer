@@ -28,9 +28,9 @@
                 <li><p>SITE NAME</p></li>
                 <li><select name="site_name">
                     <option value="" disabled selected>サイト選択</option>
-                    @foreach($sites as $site)
-                        <option value="{{ $site->site_name }}">{{ $site->site_name }}</option>
-                    @endforeach</select>
+                    <option value="A" @if( old('site_name') === 'A' ) selected @endif>A</option>
+                    <option value="B" @if( old('site_name') === 'B' ) selected @endif>B</option>
+                    <option value="C" @if( old('site_name') === 'C' ) selected @endif>C</option></select>
                 </li>
             </ul>
             <ul>

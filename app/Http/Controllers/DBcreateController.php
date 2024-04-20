@@ -98,9 +98,7 @@ class DBcreateController extends Controller
     {
         $maps = Map::all();
         
-        $sites = Site::all();
-        
-        return view('DBcreate.site_create' , ['maps' => $maps],['sites' => $sites]);
+        return view('DBcreate.site_create' , ['maps' => $maps]);
     }
     public function siteCreate(Request $request)  
     {
