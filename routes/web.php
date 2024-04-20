@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FrontController;
 Route::get('/', [FrontController::class, 'index'])->name('top');
-Route::get('/map', [FrontController::class, 'map_select'])->name('map');
-Route::get('/map/site', [FrontController::class, 'site_select'])->name('site');
+Route::get('/map', [FrontController::class, 'mapSelect'])->name('map');
+Route::get('/map/site', [FrontController::class, 'siteSelect'])->name('site');
 
 
 use App\Http\Controllers\MypageController;
@@ -28,11 +28,11 @@ Route::get('/mypage', [MypageController::class, 'mypage'])->name('mypage')->midd
 use App\Http\Controllers\LineupController;
 
 Auth::routes();
-Route::get('/lineup_create', [LineupController::class, 'index_create'])->name('view_create')->middleware('auth');
-Route::post('/lineup_create', [LineupController::class, 'create'])->name('post_create');
+Route::get('/lineup_create', [LineupController::class, 'lineupAdd'])->name('viewCreate')->middleware('auth');
+Route::post('/lineup_create', [LineupController::class, 'lineupCreate'])->name('postCreate');
 
-Route::get('/lineup_edit', [LineupController::class, 'index_edit'])->name('view_edit')->middleware('auth');
-Route::post('/lineup_edit', [LineupController::class, 'edit'])->name('post_edit');
+Route::get('/lineup_edit', [LineupController::class, 'lineupEdit'])->name('viewEdit')->middleware('auth');
+Route::post('/lineup_edit', [LineupController::class, 'lineupUpdate'])->name('postEdit');
 
 Route::get('/lineup', [LineupController::class, 'lineup'])->name('lineup');
 

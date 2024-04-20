@@ -3,7 +3,7 @@
 @section('content')
     <h1>定点投稿画面</h1>
     <img src="{{ secure_asset('image/map_split_impact_no.png')}}">
-    <form action="{{ route('post_create') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('postCreate') }}" method="post" enctype="multipart/form-data">
         
         @csrf
     
@@ -17,41 +17,29 @@
                         
         <ul>
             <li><p>MAP NAME</p></li>
-            <li><select name="map_id">
+            <li><select name="map_name">
                 <option value="" disabled selected>マップを選択</option>
-                <option value="1">アイスボックス</option>
-                <option value="2">アセント</option>
-                <option value="3">サンセット</option>
-                <option value="4">スプリット</option>
-                <option value="5">バインド</option>
-                <option value="6">パール</option>
-                <option value="7">フラクチャー</option>
-                <option value="8">ブリーズ</option>
-                <option value="9">ヘイヴン</option>
-                <option value="10">ロータス</option></select>
+                @foreach($maps as $map)
+                    <option value="{{ $map->map_name }}">{{ $map->map_name }}</option>
+                @endforeach</select>
             </li>
         </ul>
         <ul>
             <li><p>SITE NAME</p></li>
             <li><select name="site_name">
                 <option value="" disabled selected>サイトを選択</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option></select>
+                @foreach($sites as $site)
+                    <option value="{{ $site->site_name }}">{{ $site->site_name }}</option>
+                @endforeach</select>
             </li>
         </ul>
         <ul>
             <li><p>IMPACT NO</p></li>
             <li><select name="impact_id">
                 <option value="" disabled selected>着弾位置を選択</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option></select>
+                @foreach($maps as $map)
+                    <option value="{{ $map->impact_id_image }}">{{ $map->impact_id_image }}</option>
+                @endforeach</select>
             </li>
         </ul>
         <ul>

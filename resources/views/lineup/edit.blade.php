@@ -3,7 +3,7 @@
 @section('content')
     <h1>定点編集画面</h1>
     <img src="{{ secure_asset('image/map_split_impact_no.png')}}">
-    <form action="{{ route('post_edit') }}" method="post">
+    <form action="{{ route('postEdit') }}" method="post">
         @csrf
     <ul>
         <li><p>MAP NAME</p></li>

@@ -14,6 +14,7 @@ class Site extends Model
     public static $rules = array(
         'site_name' => 'required',
         'site_image' => 'required',
-        'map_name' => 'required'
+        'map_name' => 'required',
+        'impact_id' => 'required'
     );
 }

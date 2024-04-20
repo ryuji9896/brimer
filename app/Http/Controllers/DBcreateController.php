@@ -47,11 +47,11 @@ class DBcreateController extends Controller
     
      public function mapEdit(Request $request)
      {
-         $map = Map::find($request->id);
-         if (empty($map)) {
+         $maps = Map::find($request->id);
+         if (empty($maps)) {
              abort(404);
          }
-         return view('DBcreate.map_edit' , ['map_form' => $map]);
+         return view('DBcreate.map_edit' , ['map_form' => $maps]);
      }
     
     public function mapUpdate(Request $request)
@@ -96,7 +96,11 @@ class DBcreateController extends Controller
     
     public function siteAdd()
     {
-        return view('DBcreate.site_create');
+        $maps = Map::all();
+        
+        $sites = Site::all();
+        
+        return view('DBcreate.site_create' , ['maps' => $maps],['sites' => $sites]);
     }
     public function siteCreate(Request $request)  
     {
@@ -119,11 +123,11 @@ class DBcreateController extends Controller
     
     public function siteEdit(Request $request)
      {
-         $site = Site::find($request->id);
-         if (empty($site)) {
+         $sites = Site::find($request->id);
+         if (empty($sites)) {
              abort(404);
          }
-         return view('DBcreate.site_edit' , ['site_form' => $site]);
+         return view('DBcreate.site_edit' ,[ 'site_form' => $sites ]);
      }
     
     public function siteUpdate(Request $request)

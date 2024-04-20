@@ -17,7 +17,7 @@
         <ul>
             <ul>
                 <li><p>MAP NAME</p></li>
-                <li><select name="map_name">
+                <li><select name="map_name" value="{{old('map_name')}}">
                     <option value="{{ $map_form->map_name }}">{{ $map_form->map_name }}(登録している内容)</option>
                     <option value="アセント">アセント</option>
                     <option value="スプリット">スプリット</option>

@@ -10,12 +10,12 @@ use App\Models\Site;
 
 class SelectdataController extends Controller
 {
-    public function map_index()
+    public function mapAdd()
     {
         return view('DBcreate.map_create');
     }
     
-     public function map_add(Request $request)  
+     public function mapCreate(Request $request)  
     {
         $this->validate($request, Map::$rules);
         
@@ -43,11 +43,11 @@ class SelectdataController extends Controller
     }
     
     
-     public function site_index()
+     public function siteAdd()
     {
         return view('DBcreate.site_create');
     }
-    public function site_add(Request $request)  
+    public function siteCreate(Request $request)  
     {
         $this->validate($request, Site::$rules);
         

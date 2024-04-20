@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Map;
 
+use App\Models\Site;
+
 class FrontController extends Controller
 {
     
@@ -14,7 +16,7 @@ class FrontController extends Controller
         return view('top');
     }
     
-    public function map_select()
+    public function mapSelect()
     {
         $maps = Map::all(); 
         
@@ -23,8 +25,10 @@ class FrontController extends Controller
         
     }
     
-    public function site_select()
+    public function siteSelect()
     {
-        return view('map.site.site');
+        $sites = Site::all();
+        
+        return view('map.site.site',[ 'sites' => $sites ]);
     }
 }

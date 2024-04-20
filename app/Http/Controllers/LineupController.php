@@ -6,15 +6,21 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Lineups;
 use App\Models\Map;
+use App\Models\Site;
 
 class LineupController extends Controller
 {
-   public function index_create()
+   public function lineupAdd()
    {
-       return view('lineup.create');
+        
+        $maps = Map::all();
+        
+        $sites = Site::all();
+        
+        return view('lineup.create',[ 'maps' => $maps ],[ 'sites' => $sites ]);
    }
  
-   public function create(Request $request)
+   public function lineupCreate(Request $request)
     {
         $this->validate($request, Lineups::$rules);
         
@@ -43,12 +49,12 @@ class LineupController extends Controller
         return redirect('/');
     }
     
-    public function index_edit()
+    public function lineupEdit()
     {
         return view('lineup.edit');
     }
     
-    public function edit(Request $request)
+    public function lineupUpdate(Request $request)
     {
         return view('top');
     }
