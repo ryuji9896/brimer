@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('lineups', function (Blueprint $table) {
             $table->id();
+            $table->integer('usre_id');
             $table->integer('map_id');
             $table->string('site_name');
             $table->integer('impact_id');

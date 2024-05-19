@@ -12,6 +12,7 @@ class Lineups extends Model
     protected $guarded = array('id');
     
     public static $rules = array(
+        'user_id' => 'required',
         'site_name' => 'required',
         'impact_id' => 'required',
         'standing_position_text' => 'required',

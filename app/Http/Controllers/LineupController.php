@@ -17,7 +17,7 @@ class LineupController extends Controller
         
         $sites = Site::all();
         
-        $site_id = $request->id;
+        $site_id = $request->site_id;
         
         $site_form = Site::find($site_id);
         
@@ -29,7 +29,7 @@ class LineupController extends Controller
         
         
         
-        return view('lineup.create',compact('maps' , 'sites' , 'site_id' , 'map_form' , 'map_id' , 'site_name' , 'site_form'));
+        return view('lineup.create',compact('maps' , 'sites' , 'site_id' , 'map_form' , 'site_name' , 'site_form'));
    }
  
    public function lineupCreate(Request $request)

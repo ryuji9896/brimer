@@ -26,10 +26,10 @@ class FrontController extends Controller
     
     public function siteSelect(Request $request)
     {
-        $map_form = $request->id;
+        $map_id = $request->id;
         
-        $site_form = Site::where('map_name',$map_form)->get(); 
+        $site_data = Site::where('map_name',$map_id)->get(); 
         
-        return view('map.site.site' , compact('map_form' , 'site_form'));
+        return view('map.site.site' , compact('site_data'));
     }
 }

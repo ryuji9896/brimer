@@ -37,7 +37,7 @@
             <li><p>IMPACT NO</p></li>
             <li><select name="impact_id">
                 <option value="" disabled selected>着弾位置を選択</option>
-                @for($i = 1; $i < $site->impact_id; $i++){
+                @for($i = 1; $i <= $site_form->impact_id; $i++){
                     <option value="{{ $i }}">{{ $i }}</option>
                 @endfor</select>
             </li>
