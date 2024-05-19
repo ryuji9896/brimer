@@ -22,13 +22,14 @@ class FrontController extends Controller
         
         return view('map.map',[ 'maps' => $maps ]);
         
-        
     }
     
-    public function siteSelect()
+    public function siteSelect(Request $request)
     {
-        $sites = Site::all();
+        $map_form = $request->id;
         
-        return view('map.site.site',[ 'sites' => $sites ]);
+        $site_form = Site::where('map_name',$map_form)->get(); 
+        
+        return view('map.site.site' , compact('map_form' , 'site_form'));
     }
 }

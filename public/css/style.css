@@ -159,6 +159,10 @@ p {
   }
 }
 
+.w-19 {
+  width: 19%;
+}
+
 header ul {
   align-items: stretch;
   line-height: 0;
@@ -181,4 +185,8 @@ header ul li a {
   font-size: 34px;
   font-weight: bold;
   justify-content: center;
+}
+
+.d-flex .w-19 {
+  margin-bottom: 30px;
 }

@@ -94,7 +94,7 @@ class DBcreateController extends Controller
         return redirect('/DBcreate_index');
     }
     
-    public function siteAdd()
+    public function siteAdd(Request $request)
     {
         $maps = Map::all();
         
@@ -121,30 +121,37 @@ class DBcreateController extends Controller
     
     public function siteEdit(Request $request)
      {
-         $sites = Site::find($request->id);
-         if (empty($sites)) {
+         $site_form = Site::find($request->id);
+         
+         $map_form = Map::find($site_form->map_name);
+         
+         $maps = Map::all();
+         
+         if (empty($site_form)) {
              abort(404);
          }
-         return view('DBcreate.site_edit' ,[ 'site_form' => $sites ]);
+         return view('DBcreate.site_edit' , compact( 'site_form' , 'maps' , 'map_form'));
      }
     
     public function siteUpdate(Request $request)
     {
-        $site = Site::find($request->id);
+        $sites = Site::find($request->id);
         $site_form = $request->all();
+        
+       
         
         if ($request->file('site_image')) {
             $site_image = $request->file('site_image')->store('public/image/site_image');
             $site_form['site_image_path'] = basename($site_image);
         } else {
-            $site_form['site_image_path'] = $site->site_image_path;
+            $site_form['site_image_path'] = $sites->site_image_path;
         }
         
         unset($site_form['_token']);
         
         unset($site_form['site_image']);
         
-        $site->fill($site_form)->save();
+        $sites->fill($site_form)->save();
         
         
         return redirect('/DBcreate_index');

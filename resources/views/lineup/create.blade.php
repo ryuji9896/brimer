@@ -2,7 +2,7 @@
 @section('title','定点の新規作成')
 @section('content')
     <h1>定点投稿画面</h1>
-    <img src="{{ secure_asset('image/map_split_impact_no.png')}}">
+    <img src="{{ secure_asset('storage/image/impact_id_image/'.$map_form->impact_id_image_path) }}">
     <form action="{{ route('postCreate') }}" method="post" enctype="multipart/form-data">
         
         @csrf
@@ -18,17 +18,17 @@
         <ul>
             <li><p>MAP NAME</p></li>
             <li><select name="map_name">
-                <option value="" disabled selected>マップを選択</option>
+                <option value="{{ $site_form->map_name }}"disabled selected>{{ $map_form->map_name }}(選択したマップ)</option>
                 @foreach($maps as $map)
-                    <option value="{{ $map->map_name }}">{{ $map->map_name }}</option>
+                    <option value="{{ $map->id }}">{{ $map->map_name }}</option>
                 @endforeach</select>
             </li>
         </ul>
         <ul>
             <li><p>SITE NAME</p></li>
             <li><select name="site_name">
-                <option value="" disabled selected>サイトを選択</option>
-                @foreach($sites as $site)
+                <option value="{{ $site_id }}" disabled selected>{{ $site_form->site_name }}(選択したサイト)</option>
+                @foreach($site_name as $site)
                     <option value="{{ $site->site_name }}">{{ $site->site_name }}</option>
                 @endforeach</select>
             </li>
@@ -37,9 +37,9 @@
             <li><p>IMPACT NO</p></li>
             <li><select name="impact_id">
                 <option value="" disabled selected>着弾位置を選択</option>
-                @foreach($maps as $map)
-                    <option value="{{ $map->impact_id_image }}">{{ $map->impact_id_image }}</option>
-                @endforeach</select>
+                @for($i = 1; $i < $site->impact_id; $i++){
+                    <option value="{{ $i }}">{{ $i }}</option>
+                @endfor</select>
             </li>
         </ul>
         <ul>

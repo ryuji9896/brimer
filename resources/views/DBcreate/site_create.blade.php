@@ -20,7 +20,7 @@
                 <li><select name="map_name">
                     <option value="" disabled selected>マップ選択</option>
                     @foreach($maps as $map)
-                        <option value="{{ $map->map_name }}">{{ $map->map_name }}</option>
+                        <option value="{{ $map->id }}">{{ $map->map_name }}</option>
                     @endforeach</select>
                 </li>
             </ul>
@@ -37,21 +37,21 @@
                 <li><p>IMPACT ID</p></li>
                 <li><select name="impact_id">
                     <option value="" disabled selected>サイト毎の着弾位置個数選択</option>
-                    <option value="①" @if( old('impact_id') === '①' ) selected @endif>①</option>
-                    <option value="②" @if( old('impact_id') === '②' ) selected @endif>②</option>
-                    <option value="③" @if( old('impact_id') === '③' ) selected @endif>③</option>
-                    <option value="④" @if( old('impact_id') === '④' ) selected @endif>④</option>
-                    <option value="⑤" @if( old('impact_id') === '⑤' ) selected @endif>⑤</option>
-                    <option value="⑥" @if( old('impact_id') === '⑥' ) selected @endif>⑥</option>
-                    <option value="⑦" @if( old('impact_id') === '⑦' ) selected @endif>⑦</option>
-                    <option value="⑧" @if( old('impact_id') === '⑧' ) selected @endif>⑧</option>
-                    <option value="⑨" @if( old('impact_id') === '⑨' ) selected @endif>⑨</option>
-                    <option value="⑩" @if( old('impact_id') === '⑩' ) selected @endif>⑩</option>
-                    <option value="⑪" @if( old('impact_id') === '⑪' ) selected @endif>⑪</option>
-                    <option value="⑫" @if( old('impact_id') === '⑫' ) selected @endif>⑫</option>
-                    <option value="⑬" @if( old('impact_id') === '⑬' ) selected @endif>⑬</option>
-                    <option value="⑭" @if( old('impact_id') === '⑭' ) selected @endif>⑭</option>
-                    <option value="⑮" @if( old('impact_id') === '⑮' ) selected @endif>⑮</option></select>
+                    <option value="1" @if( old('impact_id') === '1' ) selected @endif>1</option>
+                    <option value="2" @if( old('impact_id') === '2' ) selected @endif>2</option>
+                    <option value="3" @if( old('impact_id') === '3' ) selected @endif>3</option>
+                    <option value="4" @if( old('impact_id') === '4' ) selected @endif>4</option>
+                    <option value="5" @if( old('impact_id') === '5' ) selected @endif>5</option>
+                    <option value="6" @if( old('impact_id') === '6' ) selected @endif>6</option>
+                    <option value="7" @if( old('impact_id') === '7' ) selected @endif>7</option>
+                    <option value="8" @if( old('impact_id') === '8' ) selected @endif>8</option>
+                    <option value="9" @if( old('impact_id') === '9' ) selected @endif>9</option>
+                    <option value="10" @if( old('impact_id') === '10' ) selected @endif>10</option>
+                    <option value="11" @if( old('impact_id') === '11' ) selected @endif>11</option>
+                    <option value="12" @if( old('impact_id') === '12' ) selected @endif>12</option>
+                    <option value="13" @if( old('impact_id') === '13' ) selected @endif>13</option>
+                    <option value="14" @if( old('impact_id') === '14' ) selected @endif>14</option>
+                    <option value="15" @if( old('impact_id') === '15' ) selected @endif>15</option></select>
                 </li>
             </ul>
             <ul>

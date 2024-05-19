@@ -2,9 +2,9 @@
 @section('title','マップ選択')
 @section('content')
     <h1>マップ選択</h1>
-    <ul>
+    <ul class="d-flex flex-wrap justify-content-between">
         @foreach($maps as $map)
-            <li><a href="{{ route('site')}}"><img src="{{ secure_asset('storage/image/map_image/'.$map->map_image_path) }}"></a></li>
+            <li class="w-19"><a href="{{ route('site', ['id' => $map->id]) }}"><img src="{{ secure_asset('storage/image/map_image/'.$map->map_image_path) }}"></a></li>
         @endforeach
     </ul>
 @endsection

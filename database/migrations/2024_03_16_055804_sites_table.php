@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('map_name');
             $table->string('site_name');
+            $table->integer('impact_id');
             $table->string('site_image_path');
             $table->timestamps();
         }); 

@@ -10,14 +10,26 @@ use App\Models\Site;
 
 class LineupController extends Controller
 {
-   public function lineupAdd()
+   public function lineupAdd(Request $request)
    {
         
         $maps = Map::all();
         
         $sites = Site::all();
         
-        return view('lineup.create',[ 'maps' => $maps ],[ 'sites' => $sites ]);
+        $site_id = $request->id;
+        
+        $site_form = Site::find($site_id);
+        
+        $map_form = Map::find($site_form->map_name);
+        
+        $map_name = $map_form->id;
+        
+        $site_name = Site::where('map_name',$map_name)->get();
+        
+        
+        
+        return view('lineup.create',compact('maps' , 'sites' , 'site_id' , 'map_form' , 'map_id' , 'site_name' , 'site_form'));
    }
  
    public function lineupCreate(Request $request)
