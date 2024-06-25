@@ -20,7 +20,7 @@
                 <li><select name="map_name" value="{{ old('map_name') }}">
                     <option value="{{ $site_form->map_name }}"disabled selected>{{ $map_form->map_name }}(登録している内容)</option>
                     @foreach($maps as $map)
-                        <option value="{{ $map->map_name }}">{{ $map->map_name }}</option>
+                        <option value="{{ $map->id }}">{{ $map->map_name }}</option>
                     @endforeach</select>
                 </li>
             </ul>

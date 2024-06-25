@@ -79,4 +79,20 @@ class LineupController extends Controller
         
         return view('lineup.lineup', ['posts' => $posts]);
     }
+    
+    public function test(Request $request)
+   {
+        
+        $maps = Map::all();
+        
+        $flag = $request->flag;
+        
+        if($flag == "true"){
+            
+             return view('map.map',compact('maps','flag'));
+            
+        }else{
+            return view('top');
+        }        
+   }
 }

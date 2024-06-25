@@ -36,6 +36,8 @@ Route::post('/lineup_edit', [LineupController::class, 'lineupUpdate'])->name('po
 
 Route::get('/lineup', [LineupController::class, 'lineup'])->name('lineup');
 
+Route::post('/test', [LineupController::class, 'test'])->name('test')->middleware('auth');
+
 use App\Http\Controllers\DBcreateController;
 
 Route::get('/DBcreate_index', [DBcreateController::class, 'DBIndex'])->name('DBIndex');
