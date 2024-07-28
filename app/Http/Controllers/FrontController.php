@@ -16,11 +16,13 @@ class FrontController extends Controller
         return view('top');
     }
     
-    public function mapSelect()
+    public function mapSelect(Request $request)
     {
         $maps = Map::all(); 
         
-        return view('map.map',[ 'maps' => $maps ]);
+        $flag = $request->flag;
+        
+        return view('map.map', compact('maps','flag'));
         
     }
     
@@ -30,6 +32,48 @@ class FrontController extends Controller
         
         $site_data = Site::where('map_name',$map_id)->get(); 
         
-        return view('map.site.site' , compact('site_data'));
+         $flag = $request->flag;
+        
+        return view('map.site.site' , compact('site_data','flag'));
+    }
+    
+    public function mapView(Request $request)
+    {
+        $maps = Map::all(); 
+        
+        $flag = true;
+        
+        return view('map.map', compact('maps','flag'));
+    }
+    
+    public function mapPost(Request $request)
+    {
+        $maps = Map::all(); 
+        
+        $flag = false;
+        
+        return view('map.map', compact('maps','flag'));
+    }
+    
+    public function siteView(Request $request)
+    {
+        $map_id = $request->id;
+        
+        $site_data = Site::where('map_name',$map_id)->get(); 
+        
+         $flag = true;
+        
+        return view('map.site.site' , compact('site_data','flag'));
+    }
+    
+    public function sitePost(Request $request)
+    {
+        $map_id = $request->id;
+        
+        $site_data = Site::where('map_name',$map_id)->get(); 
+        
+         $flag = false;
+        
+        return view('map.site.site' , compact('site_data','flag'));
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
     <h1>定点投稿画面</h1>
     <img src="{{ secure_asset('storage/image/impact_id_image/'.$map_form->impact_id_image_path) }}">
-    <form action="{{ route('postCreate') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('post') }}" method="post" enctype="multipart/form-data">
         
         @csrf
     
